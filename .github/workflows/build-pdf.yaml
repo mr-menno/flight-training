@@ -1,0 +1,32 @@
+name: Build PDF
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Pandoc and LaTeX
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc texlive texlive-xetex
+
+    - name: Compile PDF
+      run: |
+        pandoc --template eisvogel --pdf-engine=xelatex -o output.pdf **/*.md
+
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: pdf
+        path: output.pdf

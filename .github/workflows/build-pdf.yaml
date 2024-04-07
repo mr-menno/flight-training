@@ -25,10 +25,12 @@ jobs:
       run: |
         wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v2.0.0/Eisvogel-2.0.0.tar.gz
         tar -xzf Eisvogel-2.0.0.tar.gz
+        sudo mkdir -p /usr/share/pandoc/data/templates/
+        sudo mv Eisvogel/eisvogel.tex /usr/share/pandoc/data/templates/
 
     - name: Compile PDF
       run: |
-        pandoc --template Eisvogel/eisvogel.tex --pdf-engine=xelatex -o output.pdf **/*.md
+        pandoc --template eisvogel.tex --pdf-engine=xelatex -o output.pdf **/*.md
 
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v2

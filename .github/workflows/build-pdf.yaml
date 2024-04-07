@@ -25,8 +25,7 @@ jobs:
       run: |
         wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v2.0.0/Eisvogel-2.0.0.tar.gz
         tar -xzf Eisvogel-2.0.0.tar.gz
-        sudo mkdir -p /usr/share/pandoc/data/templates/
-        sudo mv Eisvogel/eisvogel.tex /usr/share/pandoc/data/templates/
+        sudo mv eisvogel.latex /usr/share/pandoc/data/templates/eisvogel.tex
 
     - name: Compile PDF
       run: |

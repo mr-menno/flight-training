@@ -1,6 +1,8 @@
 site_name: FAA Private Pilot Training
+site_url: https://mr-menno.github.io/flight-training/
 theme:
-  name: 'material'
+  name: null
+  custom_dir: 'cinder'
 
 nav:
   - Home: index.md

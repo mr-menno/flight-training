@@ -21,9 +21,14 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y pandoc texlive texlive-xetex
 
+    - name: Download Eisvogel template
+      run: |
+        wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v2.0.0/Eisvogel-2.0.0.tar.gz
+        tar -xzf Eisvogel-2.0.0.tar.gz
+
     - name: Compile PDF
       run: |
-        pandoc --template eisvogel --pdf-engine=xelatex -o output.pdf **/*.md
+        pandoc --template Eisvogel/eisvogel.tex --pdf-engine=xelatex -o output.pdf **/*.md
 
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v2

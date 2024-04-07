@@ -1,0 +1,27 @@
+site_name: FAA Private Pilot Training
+theme:
+  name: 'material'
+
+nav:
+  - Home: index.md
+  - Ground Training:
+      - Regulations: ground_training/regulations.md
+      - Aircraft Systems: ground_training/aircraft_systems.md
+      # Add other ground training topics here
+  - Flight Training:
+      - Pre-flight Procedures: flight_training/pre_flight.md
+      - Takeoff and Landing: flight_training/takeoff_landing.md
+      # Add other flight training topics here
+  - Checklists and Resources:
+      - Pre-flight Checklist: checklists/pre_flight_checklist.md
+      - Regulatory Documents: resources/regulatory_documents.md
+      # Add other resources here
+  - Practice Exams and Quizzes:
+      - Written Exam Prep: practice_exams/written_exam_prep.md
+      - Checkride Prep: practice_exams/checkride_prep.md
+      # Add other practice exams and quizzes here
+  - Glossary: glossary.md
+  - Appendices:
+      - Reference Materials: appendices/reference_materials.md
+      - Flight Logs: appendices/flight_logs.md
+      # Add other appendices here
